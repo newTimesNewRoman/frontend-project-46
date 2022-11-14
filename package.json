@@ -16,6 +16,7 @@
     "url": "https://github.com/newTimesNewRoman/frontend-project-46/issues"
   },
   "homepage": "https://github.com/newTimesNewRoman/frontend-project-46#readme",
+  "type": "module",
   "bin": {
     "gendiff": "gendiff.js"
   },
