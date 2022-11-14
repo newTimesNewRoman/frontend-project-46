@@ -6,4 +6,5 @@ program
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format <type>', 'output format')
   .arguments('<filepath1> <filepath2>')
+  // eslint-disable-next-line no-undef
   .parse(process.argv);
