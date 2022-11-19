@@ -21,7 +21,8 @@
     "gendiff": "gendiff.js"
   },
   "dependencies": {
-    "commander": "^9.4.1"
+    "commander": "^9.4.1",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^8.27.0",
