@@ -70,7 +70,7 @@ const genDiff = (filepath1, filepath2) => {
         throw new Error(`Unknown element type: ${type}`);
     }
   });
-  return console.log(`{\n${result.join('\n')}\n}`);
+  return `{\n${result.join('\n')}\n}`;
 };
 
 export default genDiff;
