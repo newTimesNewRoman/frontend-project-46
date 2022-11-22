@@ -4,7 +4,7 @@
   "description": "@hexlet/code",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest"
   },
   "repository": {
     "type": "git",
@@ -21,12 +21,14 @@
     "gendiff": "bin/gendiff.js"
   },
   "dependencies": {
+    "@jest/globals": "^29.3.1",
     "commander": "^9.4.1",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^8.27.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^29.3.1"
   }
 }
