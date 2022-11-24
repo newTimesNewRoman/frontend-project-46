@@ -4,7 +4,8 @@ on:
   - push
 
 jobs:
-  making-test:
+  test:
+    name: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,7 +17,7 @@ jobs:
     - run: yarn build
     - run: yarn test
   coverage:
-    needs: [ making-test ]
+    needs: test
     name: coverage
     runs-on: ubuntu-latest
     steps:
