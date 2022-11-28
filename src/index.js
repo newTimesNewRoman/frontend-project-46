@@ -2,7 +2,7 @@ import { cwd } from 'node:process';
 import { readFileSync } from 'node:fs';
 import { resolve, extname } from 'node:path';
 import _ from 'lodash';
-import parseFile from './parsers';
+import parseFile from './parsers.js';
 
 const getFilepath = (filepath) => resolve(cwd(), filepath);
 
