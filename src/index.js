@@ -1,14 +1,18 @@
 import { cwd } from 'node:process';
 import { readFileSync } from 'node:fs';
 import { resolve, extname } from 'node:path';
-import _ from 'lodash';
 import parseFile from './parsers.js';
+import getDifference from './getDiff.js';
 
 const getFilepath = (filepath) => resolve(cwd(), filepath);
 
-const readFile = (path) => readFileSync(path, 'utf-8');
+const readFile = (path) => {
+  const fileText = readFileSync(path, 'utf8');
+  const fileExtention = extname(path);
+  return { fileText, fileExtention };
+};
 
-const getChanges = (obj1, obj2) => {
+/* const getChanges = (obj1, obj2) => {
   const unionKeys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
 
   const changes = unionKeys.map((key) => {
@@ -45,6 +49,7 @@ const getChanges = (obj1, obj2) => {
   });
   return changes;
 };
+*/
 
 const getResult = (array) => {
   const result = array.map((element) => {
@@ -62,23 +67,22 @@ const getResult = (array) => {
         throw new Error(`Unknown element type: ${type}`);
     }
   });
-  return result;
+  return `{\n${result.join('\n')}\n}`;
 };
 
 const genDiff = (filepath1, filepath2) => {
   const file1 = readFile(getFilepath(filepath1));
-  const extentionFile1 = extname(filepath1);
-  const data1 = parseFile(file1, extentionFile1);
+  const data1 = parseFile(file1.fileText, file1.fileExtention);
+  console.log(data1);
 
   const file2 = readFile(getFilepath(filepath2));
-  const extentionFile2 = extname(filepath2);
-  const data2 = parseFile(file2, extentionFile2);
+  const data2 = parseFile(file2.fileText, file2.fileExtention);
 
-  const changes = getChanges(data1, data2);
+  const difference = getDifference(data1, data2);
 
-  const result = getResult(changes);
+  const result = getResult(difference);
 
-  return `{\n${result.join('\n')}\n}`;
+  return result;
 };
 
 export default genDiff;
