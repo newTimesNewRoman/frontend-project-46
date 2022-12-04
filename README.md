@@ -10,5 +10,8 @@
 ### Step 5. YAML checking
 [![asciicast](https://asciinema.org/a/RNDtU0kwhvhryTYmokBoWRzfD.svg)](https://asciinema.org/a/RNDtU0kwhvhryTYmokBoWRzfD)
 
-### Step 6. Checking nested files with stylish output format
+### Step 6. Checking nested files with stylish output format (default)
 [![asciicast](https://asciinema.org/a/weaJzpQ1LrpvTbCVjRFX2d9R1.svg)](https://asciinema.org/a/weaJzpQ1LrpvTbCVjRFX2d9R1)
+
+### Step 7. Checking nested files with plain output format
+[![asciicast](https://asciinema.org/a/HUIbJOmnd1MMvqyGbFnhjKwXF.svg)](https://asciinema.org/a/HUIbJOmnd1MMvqyGbFnhjKwXF)
