@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { resolve, extname } from 'node:path';
 import parseFile from './parsers.js';
 import getDiffTree from './getDiff.js';
-import makeResultInFormat from './formatters/stylish.js';
+import makeResultInFormat from './formatters/formatter.js';
 
 const getFilepath = (filepath) => resolve(cwd(), filepath);
 
@@ -13,7 +13,7 @@ const readFile = (path) => {
   return { fileText, fileExtention };
 };
 
-const genDiff = (filepath1, filepath2) => {
+const genDiff = (filepath1, filepath2, outputFormat = 'stylish') => {
   const file1 = readFile(getFilepath(filepath1));
   const data1 = parseFile(file1.fileText, file1.fileExtention);
 
@@ -22,7 +22,7 @@ const genDiff = (filepath1, filepath2) => {
 
   const diffTree = getDiffTree(data1, data2);
 
-  const result = makeResultInFormat(diffTree);
+  const result = makeResultInFormat(diffTree, outputFormat);
 
   return result;
 };
