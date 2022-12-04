@@ -9,7 +9,7 @@ const parsers = {
 const getParser = (extention) => {
   const parser = parsers[extention];
   if (!parser) {
-    throw new Error(`unknown format: ${extention}`);
+    throw new Error('Unknown extension of input file');
   }
   return parser;
 };
