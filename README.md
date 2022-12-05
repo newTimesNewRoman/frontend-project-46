@@ -15,3 +15,6 @@
 
 ### Step 7. Checking nested files with plain output format
 [![asciicast](https://asciinema.org/a/HUIbJOmnd1MMvqyGbFnhjKwXF.svg)](https://asciinema.org/a/HUIbJOmnd1MMvqyGbFnhjKwXF)
+
+### Step 8. Checking nested files with JSON output format
+[![asciicast](https://asciinema.org/a/5tfKByFT7QDp8cSgJ7jfNgFLw.svg)](https://asciinema.org/a/5tfKByFT7QDp8cSgJ7jfNgFLw)
