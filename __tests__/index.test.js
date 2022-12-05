@@ -11,6 +11,7 @@ const getFixturePath = (fileName) => path.join(__dirname, '__fixtures__', fileNa
 
 const stylishExpectedResult = readFileSync(getFixturePath('result-stylish.txt'), 'utf-8');
 const plainExpectedResult = readFileSync(getFixturePath('result-plain.txt'), 'utf-8');
+const jsonExpectedResult = readFileSync(getFixturePath('result-json.txt'), 'utf-8');
 
 test('genDiff JSON stylish & plain', () => {
   const jsonBefore = getFixturePath('file1.json');
@@ -20,8 +21,9 @@ test('genDiff JSON stylish & plain', () => {
   expect(genDiff(jsonBefore, jsonAfter, 'plain')).toEqual(plainExpectedResult);
 });
 
-test('genDiff YAML default', () => {
+test('genDiff YAML default & json', () => {
   const yamlBefore = getFixturePath('filepath1.yml');
   const yamlAfter = getFixturePath('filepath2.yml');
   expect(genDiff(yamlBefore, yamlAfter)).toEqual(stylishExpectedResult);
+  expect(genDiff(yamlBefore, yamlAfter, 'json')).toEqual(jsonExpectedResult);
 });
