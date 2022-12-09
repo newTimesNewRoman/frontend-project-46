@@ -7,10 +7,8 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b89907afb1e51757a0d1/test_coverage)](https://codeclimate.com/github/newTimesNewRoman/frontend-project-46/test_coverage)
 
 ## Program features:
-- Support for input formats: json, yml.
+- Support for input formats: json, yaml, yml.
 - Output reports in the form of stylish, plain or json.
-
-
 
 ## Installation
 
@@ -31,37 +29,32 @@ gendiff --help
 ```
 
 Example:
-[![asciicast](https://asciinema.org/a/9hsCeadJBYXBuUC9AtZpISzqf.svg)](https://asciinema.org/a/9hsCeadJBYXBuUC9AtZpISzqf)
+[![asciicast](https://asciinema.org/a/thDdPRSS2O1e4AQzlbgQeRuGQ.svg)](https://asciinema.org/a/thDdPRSS2O1e4AQzlbgQeRuGQ)
 
 ## Comparing .json and .yml files with stylish output format (default)
 
 ```sh
-gendiff ./__fixtures__/file1.json ./__fixtures__/file2.json
+gendiff ./__fixtures__/file1.json ./__fixtures__/file2.yml
 ```
-[![asciicast](https://asciinema.org/a/PnBxcLL9BhMDaRs2AmHDe7Cw9.svg)](https://asciinema.org/a/PnBxcLL9BhMDaRs2AmHDe7Cw9)
-```sh
-gendiff ./__fixtures__/filepath1.yml ./__fixtures__/filepath2.yml
-```
-[![asciicast](https://asciinema.org/a/vynWhHpm0z0JmAliamubCg4Rr.svg)](https://asciinema.org/a/vynWhHpm0z0JmAliamubCg4Rr)
+
+[![asciicast](https://asciinema.org/a/qWTCMmGkP0u1z7RDWeg4b8Kj2.svg)](https://asciinema.org/a/qWTCMmGkP0u1z7RDWeg4b8Kj2)
 
 ## Comparing .json and .yml files with plain output format
 
 ```sh
-gendiff -f plain ./__fixtures__/file1.json ./__fixtures__/file2.json
+gendiff -f plain ./__fixtures__/file1.yml ./__fixtures__/file2.json
 ```
-[![asciicast](https://asciinema.org/a/GhR1v9yVR4tL7DsZ9dgGVVIly.svg)](https://asciinema.org/a/GhR1v9yVR4tL7DsZ9dgGVVIly)
-```sh
-gendiff -f plain ./__fixtures__/filepath1.yml ./__fixtures__/filepath2.yml
-```
-[![asciicast](https://asciinema.org/a/hSskSBAuPISLzojpOKCFL8Etj.svg)](https://asciinema.org/a/hSskSBAuPISLzojpOKCFL8Etj)
 
-## Comparing .json and .yml files with plain output format
+[![asciicast](https://asciinema.org/a/OSbEg7ELU8RJUNgs9aKy9WID4.svg)](https://asciinema.org/a/OSbEg7ELU8RJUNgs9aKy9WID4)
+
+## Comparing .json and .yaml files with plain output format
 
 ```sh
-gendiff -f json ./__fixtures__/file1.json ./__fixtures__/file2.json
+gendiff -f json ./__fixtures__/file1.json ./__fixtures__/file2.yaml
 ```
-[![asciicast](https://asciinema.org/a/Y8FYWpJCyo0j2bHEyGwxGTE1s.svg)](https://asciinema.org/a/Y8FYWpJCyo0j2bHEyGwxGTE1s)
-```sh
-gendiff -f json ./__fixtures__/filepath1.yml ./__fixtures__/filepath2.yml
-```
-[![asciicast](https://asciinema.org/a/e8UadKmhujgm6hG5ekqodz9Rh.svg)](https://asciinema.org/a/e8UadKmhujgm6hG5ekqodz9Rh)
+
+[![asciicast](https://asciinema.org/a/TkdLAzGhA7lwsjZgImT52NQTJ.svg)](https://asciinema.org/a/TkdLAzGhA7lwsjZgImT52NQTJ)
+
+## License
+
+MIT
