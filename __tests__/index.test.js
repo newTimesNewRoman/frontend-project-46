@@ -24,7 +24,7 @@ const testCases = [
   },
   {
     file1: getFixturePath('file1.json'),
-    file2: getFixturePath('file2.yml'),
+    file2: getFixturePath('file2.yaml'),
     format: 'json',
     expected: readFileSync(getFixturePath('result-json.txt'), 'utf-8'),
   }];
