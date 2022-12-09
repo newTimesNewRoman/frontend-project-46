@@ -2,28 +2,35 @@ import { test, expect } from '@jest/globals';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import { readFileSync } from 'node:fs';
-import genDiff from '../src/index.js';
+import genDiff from '../index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const getFixturePath = (fileName) => path.join(__dirname, '__fixtures__', fileName);
+const getFixturePath = (fileName) => path.join(__dirname, '..', '__fixtures__', fileName);
 
-const stylishExpectedResult = readFileSync(getFixturePath('result-stylish.txt'), 'utf-8');
-const plainExpectedResult = readFileSync(getFixturePath('result-plain.txt'), 'utf-8');
-const jsonExpectedResult = readFileSync(getFixturePath('result-json.txt'), 'utf-8');
+const testCases = [
+  {
+    file1: getFixturePath('file1.json'),
+    file2: getFixturePath('file2.yml'),
+    format: 'stylish',
+    expected: readFileSync(getFixturePath('result-stylish.txt'), 'utf-8'),
+  },
+  {
+    file1: getFixturePath('file1.yml'),
+    file2: getFixturePath('file2.json'),
+    format: 'plain',
+    expected: readFileSync(getFixturePath('result-plain.txt'), 'utf-8'),
+  },
+  {
+    file1: getFixturePath('file1.json'),
+    file2: getFixturePath('file2.yml'),
+    format: 'json',
+    expected: readFileSync(getFixturePath('result-json.txt'), 'utf-8'),
+  }];
 
-test('genDiff JSON stylish & plain', () => {
-  const jsonBefore = getFixturePath('file1.json');
-  const jsonAfter = getFixturePath('file2.json');
-  expect(genDiff(jsonBefore, jsonAfter)).toEqual(stylishExpectedResult);
-  expect(genDiff(jsonBefore, jsonAfter, 'stylish')).toEqual(stylishExpectedResult);
-  expect(genDiff(jsonBefore, jsonAfter, 'plain')).toEqual(plainExpectedResult);
-});
-
-test('genDiff YAML default & json', () => {
-  const yamlBefore = getFixturePath('filepath1.yml');
-  const yamlAfter = getFixturePath('filepath2.yml');
-  expect(genDiff(yamlBefore, yamlAfter)).toEqual(stylishExpectedResult);
-  expect(genDiff(yamlBefore, yamlAfter, 'json')).toEqual(jsonExpectedResult);
+test.each(testCases)('genDiff $format test case', ({
+  file1, file2, format, expected,
+}) => {
+  expect(genDiff(file1, file2, format)).toEqual(expected);
 });
