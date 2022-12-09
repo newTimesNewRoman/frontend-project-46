@@ -2,7 +2,7 @@ import { cwd } from 'node:process';
 import { readFileSync } from 'node:fs';
 import { resolve, extname } from 'node:path';
 import parseFile from './parsers.js';
-import getDiffTree from './getDiff.js';
+import getDiffTree from './getDiffTree.js';
 import makeResultInFormat from './formatters/index.js';
 
 const getFilepath = (filepath) => resolve(cwd(), filepath);
