@@ -28,7 +28,6 @@ For help, you can use the --help (-h) command:
 gendiff --help
 ```
 
-Example:
 [![asciicast](https://asciinema.org/a/thDdPRSS2O1e4AQzlbgQeRuGQ.svg)](https://asciinema.org/a/thDdPRSS2O1e4AQzlbgQeRuGQ)
 
 ## Comparing .json and .yml files with stylish output format (default)
