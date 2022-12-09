@@ -9,7 +9,7 @@ const getFilepath = (filepath) => resolve(cwd(), filepath);
 
 const readFile = (path) => {
   const fileText = readFileSync(path, 'utf8');
-  const fileExtention = extname(path);
+  const fileExtention = extname(path).slice(1);
   return { fileText, fileExtention };
 };
 

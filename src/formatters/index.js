@@ -10,7 +10,7 @@ const makeResultInFormat = (tree, outputFormat) => {
     case 'plain':
       return makePlainFormat(tree);
     default:
-      throw new Error('Unknown format of output');
+      throw new Error(`Unknown format ${outputFormat}`);
   }
 };
 

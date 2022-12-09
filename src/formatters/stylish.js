@@ -30,7 +30,7 @@ const makeStylishFormat = (diffTree) => {
         case 'object':
           return `${makeIndent(depth)}  ${node.key}: {\n${format(node.children, depth + 1)}\n  ${makeIndent(depth)}}`;
         default:
-          throw new Error('Unknown node type');
+          throw new Error(`Unknown value ${node.type}`);
       }
     })
     .join('\n');

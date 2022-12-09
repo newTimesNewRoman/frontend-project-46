@@ -25,7 +25,7 @@ const makePlainFormat = (diffTree) => {
         case 'object':
           return `${format(node.children, propertyName)}`;
         default:
-          throw new Error('Unknown node type');
+          throw new Error(`Unknown value ${node.type}`);
       }
     })
     .join('\n');
