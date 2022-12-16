@@ -1,16 +1,16 @@
 import { load } from 'js-yaml';
 
-const parseFile = (file, parser) => {
+const parseData = (data, parser) => {
   switch (parser) {
     case 'json':
-      return JSON.parse(file);
+      return JSON.parse(data);
     case 'yaml':
-      return load(file);
+      return load(data);
     case 'yml':
-      return load(file);
+      return load(data);
     default:
-      throw new Error(`Unknown format ${parser}`);
+      throw new Error(`Current ${parser} is not supported`);
   }
 };
 
-export default parseFile;
+export default parseData;
