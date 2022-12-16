@@ -14,6 +14,7 @@ const plainResult = readFileSync(getFixturePath('result-plain.txt'), 'utf-8');
 
 const testList = [
   'yml',
+  'yaml',
   'json',
 ];
 
